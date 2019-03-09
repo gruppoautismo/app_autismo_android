@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">aut_out</string>
+    <string name="country_prompt">Choose a country</string>
+
+    <string-array name="elenco_problemi">
+        <item>trasporti</item>
+        <item>a scuola</item>
+
+    </string-array>
+</resources>
