@@ -8,50 +8,59 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="395dp"
-        android:layout_height="711dp"
+        android:layout_height="583dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Spinner
-            android:id="@+id/spinner_"
-            android:layout_width="379dp"
-            android:layout_height="47dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="291dp"
+            android:layout_marginLeft="291dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="648dp"
-            android:entries="@array/elenco_problemi"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="519dp"
+            android:onClick="apri_att"
+            android:text="@string/butt_sel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="254dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginBottom="518dp"
+            android:entries="@array/elenco_problemi"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="84dp"
-            android:layout_marginEnd="328dp"
-            android:layout_marginRight="328dp"
-            android:layout_marginBottom="608dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
-
 </android.support.constraint.ConstraintLayout>
