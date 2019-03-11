@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //dichiara gli elementi del file xml per quest'attività(MODIFICARE)
         final TextView textView = (TextView) findViewById(R.id.textView);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         button = (Button) findViewById(R.id.button);
 
+        //quando un elemento del menu viene selezionato aggiorna la variabile indice
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -38,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
+    //avvia la seconda attivita(trasporti) e porta l'indice come messaggio
     public  void apri_att(View view){
 
 
