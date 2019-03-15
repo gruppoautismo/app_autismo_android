@@ -1,10 +1,9 @@
-package android.example.com.download_3;
+package com.example.aut_out;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
-
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -22,7 +21,9 @@ public class downloader extends AsyncTask<String, String, String> {
         private ProgressDialog progressDialog;
         private String fileName;
         private String folder;
-        private boolean isDownloaded;
+
+        //public String folder_name;
+
 
 
         @Override
@@ -41,15 +42,14 @@ public class downloader extends AsyncTask<String, String, String> {
 
                 int lengthOfFile = connection.getContentLength();
 
-
-
                 InputStream input = new BufferedInputStream(url.openStream(), 8192);
 
+                fileName =  f_url[0].substring(f_url[0].lastIndexOf('/') + 1, f_url[0].length());
 
-                fileName = f_url[0].substring(f_url[0].lastIndexOf('/') + 1, f_url[0].length());
+                Log.d("down", "filename:" + fileName);
 
 
-                //External directory path to save file
+
                 folder = Environment.getExternalStorageDirectory() + File.separator + "appautismofile/";
 
 
@@ -80,19 +80,19 @@ public class downloader extends AsyncTask<String, String, String> {
 
                 output.close();
                 input.close();
-                return "Downloaded at: " + folder + fileName;
+                return "scaricato nel path: " + folder + fileName;
 
             } catch (Exception e) {
                 Log.e("Error: ", e.getMessage());
             }
 
-            return "Something went wrong";
+            return "errore";
         }
 
 
         protected void onProgressUpdate(String... progress) {
 
-           // progressDialog.setProgress(Integer.parseInt(progress[0]));
+
         }
 
 
