@@ -14,13 +14,7 @@ public class reader {
 
     public String[] leggi(String path) throws IOException {
 
-       // String folder;
-       // File sdcard = Environment.getExternalStorageDirectory();
-       // folder = Environment.getExternalStorageDirectory() + File.separator + "appautismofile" + File.separator + filename;
-
         File file = new File(path);
-
-      //  File file = new File(sdcard,"contenuto.txt");
 
         StringBuilder text = new StringBuilder();
 
@@ -41,13 +35,18 @@ public class reader {
         String[] array_ = array_constr(text.toString(), ",");
 
         return array_;
-        //return text.toString();
+
 
     }
 
     private String[] array_constr(String string, String splitter){
 
         String[] array_letto = string.split(splitter);
+
+        for(int x = 0; x < array_letto.length; x++){
+            array_letto[x] = array_letto[x].replace('"', ' ');
+
+        }
 
         return array_letto;
 
