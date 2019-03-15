@@ -1,15 +1,20 @@
 package com.example.aut_out;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.io.File;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +30,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        reader rd = new reader();
+
+        String folder = Environment.getExternalStorageDirectory() + File.separator + "appautismofile" + File.separator + "contenuto.txt";
         String link = getResources().getString(R.string.link);
         Log.d("debug!:", "link:"+link);
 
@@ -36,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Log.d("file chk:", "vedendo se il file esisteva");
+        Log.d("file chk:", "verificando l'esistenza del file");
 
         boolean file_ex = check.fileExists("contenuto.txt");
 
         if(!file_ex) {
            // String link = getResources().getString(R.string.link);
-            Log.d("file chk:", "file non esisteva");
+            Log.d("file chk:", "file non esiste");
             Log.d("file down:", "scaricando");
             try{
                 new downloader().execute(link);
@@ -51,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else{
-            Log.d("file chk", "file esisteva, continuo");
+            Log.d("file chk", "file esiste, continuo");
         }
 
 
@@ -65,6 +75,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         button = (Button) findViewById(R.id.button);
+
+        String[] array_ = {"errore"};
+
+        try {
+            array_ = rd.leggi(folder);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this,   android.R.layout.simple_spinner_item, array_);
+
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+
+        spinner.setAdapter(spinnerArrayAdapter);
 
 
 

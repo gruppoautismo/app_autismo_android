@@ -16,15 +16,9 @@ import java.net.URLConnection;
 
 public class downloader extends AsyncTask<String, String, String> {
 
-
-
         private ProgressDialog progressDialog;
         private String fileName;
         private String folder;
-
-        //public String folder_name;
-
-
 
         @Override
         protected void onPreExecute() {
@@ -48,8 +42,6 @@ public class downloader extends AsyncTask<String, String, String> {
 
                 Log.d("down", "filename:" + fileName);
 
-
-
                 folder = Environment.getExternalStorageDirectory() + File.separator + "appautismofile/";
 
 
@@ -58,7 +50,6 @@ public class downloader extends AsyncTask<String, String, String> {
                 if (!directory.exists()) {
                     directory.mkdirs();
                 }
-
 
                 OutputStream output = new FileOutputStream(folder + fileName);
 
@@ -74,7 +65,6 @@ public class downloader extends AsyncTask<String, String, String> {
                     output.write(data, 0, count);
                 }
 
-
                 output.flush();
 
 
@@ -89,12 +79,9 @@ public class downloader extends AsyncTask<String, String, String> {
             return "errore";
         }
 
-
         protected void onProgressUpdate(String... progress) {
 
-
         }
-
 
         @Override
         protected void onPostExecute(String message) {
@@ -102,5 +89,4 @@ public class downloader extends AsyncTask<String, String, String> {
             Log.d("post", "eseguito bois");
 
         }
-
 }
