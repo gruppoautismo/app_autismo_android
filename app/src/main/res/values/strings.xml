@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">aut_out</string>
-    <string name="country_prompt">Choose a country</string>
+    <string name="link">https://raw.githubusercontent.com/gruppoautismo/app_autismo_android/exp/file/soluzioni.txt</string>
 
+    <string name="butt_sel">seleziona</string>
     <string-array name="elenco_problemi">
         <item>trasporti</item>
         <item>a scuola</item>
