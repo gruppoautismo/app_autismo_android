@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         reader rd = new reader();
 
-        String folder = Environment.getExternalStorageDirectory() + File.separator + "appautismofile" + File.separator + "contenuto.txt";
+        String folder = Environment.getExternalStorageDirectory() + File.separator + "appautismofile" + File.separator + "soluzioni.txt";
         String link = getResources().getString(R.string.link);
         Log.d("debug!:", "link:"+link);
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("file chk:", "verificando l'esistenza del file");
 
-        boolean file_ex = check.fileExists("contenuto.txt");
+        boolean file_ex = check.fileExists("soluzioni.txt");
 
         if(!file_ex) {
            // String link = getResources().getString(R.string.link);
